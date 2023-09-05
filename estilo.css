@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body{
+    background-color: #202020;
+    color: #9803fc;
+}
+
+#contenedor{
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(4,auto);
+
+    /*grid-template-areas:
+        "header header header"
+        "contenido contenido sidebar"
+        "widget-1 widget-2 sidebar"
+        "footer footer footer";*/
+}
+
+a{
+    display: block;
+    margin: 10px;
+    text-decoration: none;
+    color: black;
+    font-weight: 900;
+
+}
+
+a:hover{
+    color: white;
+}
+
+.personaje{
+    color: black;
+    display: flex;
+    text-align: justify;
+    align-items: center;
+    margin: 20px;
+    padding: 10px;
+}
+
+.bordes{
+    padding: 20px;
+    border-radius: 4px;
+}
+
+header{
+    background: #383838;
+    border-bottom: #9803fc 5px solid;
+    color: #fff;
+    /*grid-area: header;*/
+    grid-column-start: 1;
+    grid-column-end: 4;
+    text-align: center;
+}
+
+#contenido{
+    /*grid-area: contenido;*/
+    background: #fff;
+    text-align: justify;
+    grid-column: span 2;
+}
+
+#sidebar{
+    /*grid-area: sidebar; */
+    grid-column: 3/4; 
+    background: #9803fc8c;
+    box-shadow: 0 0 10px#d8a9f8;
+    color: #fff;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    grid-row: 2/4;
+}
+
+/*#widget-1{grid-area: widget-1;}
+#widget-2{grid-area: widget-2;}*/
+
+.wid{
+    background: #000000;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: #9803fc 2px solid;
+}
+
+.wid-img > img{
+    height: 100px;
+}
+
+footer{
+    background: #c94803;
+    color: #fff;
+    text-align: center;
+    /*grid-area: footer;*/
+    grid-column: span 3;
+}
+
+@media screen and (max-width: 768px){
+
+    #contenido{
+        grid-column: 1/-1;
+    }
+
+    #sidebar{
+        grid-column: span 3;
+    }
+
+    .wid{
+        grid-column: span 3;
+    }
+}
